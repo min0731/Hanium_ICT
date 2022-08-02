@@ -1,0 +1,25 @@
+h1 {
+	color: rgb(237, 76, 71);
+	
+}
+
+hr.style {
+	background-color: #ff00004d;
+	border-block-width: initial;
+	width: 60%;
+	float: left;
+}
+
+.text_body {
+	width: 75%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 60px;
+	position: relative;
+	top: 80px;
+	height: 1500px;
+}
+
+.answer {
+	color: gray;
+}

@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+body{
+	
+}
+
+html {
+    scroll-behavior: smooth;
+      overflow-y: scroll;
+}
+
+.right-container {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 60px;
+	margin-bottom: 200px;
+	position: relative;
+	top: 80px;
+}
+
+

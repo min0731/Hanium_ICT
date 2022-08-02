@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hanium.mapper.ControlledItemsApplyMapper">
+	<select id="getList"
+		resultType="com.hanium.domain.ControlledItemsApplyVO">
+		select * from ControlledItemsApply group by ci_version_no;
+	</select>
+	<select id="read"
+		resultType="com.hanium.domain.ControlledItemsApplyVO">
+		select * from ControlledItemsApply where CI_apply_no =
+		#{CI_apply_no}
+	</select>
+	<insert id="insert" useGeneratedKeys="true"
+		keyProperty="CI_apply_no">
+		insert into ControlledItemsApply
+		(CI_daID,CI_apply_version,CI_applyContent,CI_applyCheck,
+		checkerID,CI_applyDetail_id, CI_daname,ci_version_no)
+		values
+		(#{CI_daID},#{CI_apply_version},#{CI_applyContent},#{CI_applyCheck},#{checkerID},#{CI_applyDetail_id},#{CI_daname},#{ci_version_no})
+	</insert>
+	<update id="update">
+		update ControlledItemsApply
+		set CI_daID=#{CI_daID},
+		CI_apply_version=#{CI_apply_version},
+		CI_applyContent=#{CI_applyContent},
+		CI_applyCheck=#{CI_applyCheck},
+		CI_applyDate=#{CI_applyDate},
+		checkerID=#{checkerID},
+		CI_applyDetail_id=#{CI_applyDetail_id},
+		CI_daname=#{CI_daname}
+		where
+		CI_apply_no=#{CI_apply_no}
+	</update>
+	<select id="getCI"
+		resultType="com.hanium.domain.ControlledItemsApplyVO">
+		select * from ControlledItemsApply where ci_version_no=#{ci_version_no};
+	</select>
+	<select id="count" resultType="int">
+		select count(*) from (select * from ControlledItemsApply group by
+		ci_version_no) version;
+	</select>
+</mapper>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<!-- menu css -->
+<link rel="shortcut icon" href="../favicon.ico">
+<link rel="stylesheet" type="text/css" href="../../css/normalize.css" />
+<link rel="stylesheet" type="text/css" href="../../css/demo.css" />
+<link rel="stylesheet" type="text/css" href="../../css/component.css" />
+<link rel="stylesheet" type="text/css" href="../../css/menu.css" />
+<script src="../../js/modernizr.custom.js"></script>
+<!-- menu css끝 -->
+<!-- CSS only -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+	crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+	crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="../../css/common.css" />
+<link rel="stylesheet" type="text/css" href="../../css/table.css" />
+<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+<title>sw관리 프로그램</title>
+<style>
+.table-light {
+	width: 13%;
+	vertical-align: middle;
+	text-align: center;
+}
+.table {
+	width: 90%;
+}
+
+.table-cover {
+	padding-top: 30px;
+	display: flex;
+	justify-content: center;
+}
+
+#function {
+	height: 100px;
+}
+</style>
+</head>
+<body>
+	<!-- base페이지입니다. -->
+	<div class="base_top">
+		<div class="main_menu">
+			<div class="top_left">
+				<span class="title"><a href="../base2.html">DA 관리 프로그램</a></span>
+			</div>
+			<div class="top_center" onmouseleave="out()">
+				<section class="color-6">
+					<nav class="cl-effect-13">
+						<a href="#" onmouseover="loginbox()">자산관리</a> <a href="#"
+							onmouseover="loginbox()">위험관리</a> <a href="#"
+							onmouseover="loginbox()">취약점관리</a> <a href="#"
+							onmouseover="loginbox()">회원관리</a>
+
+					</nav>
+				</section>
+			</div>
+			<div class="top_right">
+				<div class="login_box">
+					<button type="button" class="btn btn-outline-secondary"
+						style="margin-right: 10px;"
+						onclick="location.href = '../user/login.html' ">login</button>
+					<button type="button" class="btn btn-outline-danger"
+						onclick="location.href = '../user/join.html' ">Join</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="sub_menu" id="submenu">
+			<div class="sub_inner">
+				<div class="sub_left"></div>
+				<div class="sub_center" onmouseover="loginbox()"
+					onmouseleave="out()">
+					<div class="sub_center_section">
+						<nav class="cl-effect-3">
+							<a href="../DA/DA_list.html">자산 정보관리</a> <a
+								href="../SecurityAssessment/SA_list.html">단계적 보안성 평가</a> <a
+								href="../code/code_list.html">공통 코드 관리</a>
+
+						</nav>
+					</div>
+					<div class="sub_center_section">
+						<nav class="cl-effect-3">
+							<a href="#">통제항목</a> <a href="#">통제항목 적용관리</a>
+						</nav>
+					</div>
+					<div class="sub_center_section">
+						<nav class="cl-effect-3">
+							<a href="#">신규취약점 관리</a> <a href="#">조치권고</a> <a href="#">이행계획</a>
+
+						</nav>
+					</div>
+					<div class="sub_center_section_last">
+						<nav class="cl-effect-3">
+							<a href="#">정보수정</a> <a href="#">FAQ</a>
+						</nav>
+					</div>
+				</div>
+				<div class="sub_right"></div>
+			</div>
+
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		function MM_changeProp(objId, x, theProp, theValue) { //v9.0
+			var obj = null;
+			with (document) {
+				if (getElementById)
+					obj = getElementById(objId);
+			}
+			if (obj) {
+				if (theValue == true || theValue == false)
+					eval("obj.style." + theProp + "=" + theValue);
+				else
+					eval("obj.style." + theProp + "='" + theValue + "'");
+			}
+		}
+		function loginbox() {
+			var obj = document.getElementById("submenu");
+			obj.style.display = "block"; // 블록 박스로 변경
+		}
+		function out() {
+			var obj = document.getElementById("submenu");
+			obj.style.display = "none"; // 안보이게
+		}
+	</script>
+	<!-- base끝 -->
+	<div class="right-container">
+		<h1>
+			<b>DA 정보 관리</b>
+		</h1>
+		<hr>
+		<div class="table-cover">
+			<table class="table table-bordered">
+				<tr>
+					<th class="table-light">발전소 구분</th>
+					<td>수력</td>
+					<th class="table-light">발전소 상세구분</th>
+					<td>한강</td>
+					<th class="table-light">영향성 분석</th>
+					<td>Safety</td>
+				</tr>
+				<tr>
+					<th class="table-light">자산명</th>
+					<td>주급수계통</td>
+					<th class="table-light">설비유형</th>
+					<td>PC/Server</td>
+					<th class="table-light">설비사용목적</th>
+					<td>발전연관 장비</td>
+				</tr>
+				<tr>
+					<th class="table-light">기능유형</th>
+					<td colspan="2">Safety</td>
+					<th class="table-light">시스템S/W유형</th>
+					<td colspan="2">Windows</td>
+				</tr>
+				<tr>
+					<th class="table-light" id="function">자산기능</th>
+					<td colspan="5">원자력의 기둥을 맡고 있음</td>
+
+				</tr>
+
+
+				<tr>
+					<th class="table-light">통신 I/F</th>
+					<td colspan="2">Hard Wiring</td>
+					<th class="table-light">저장장치</th>
+					<td colspan="2">메모리카드</td>
+				</tr>
+				<tr>
+					<th class="table-light">운영데이터<br>수정가능여부
+					</th>
+					<td colspan="2">N</td>
+					<th class="table-light">수정 가능한<br>운영데이터
+			
+							<td colspan="2">Control Logic</td>
+			</tr>
+			<tr>
+				<th class="table-light">HMI유형</th>
+				<td colspan="5">External</td>
+			</tr>
+		</table>
+</div>
+		<br>
+		<div class="table_button_group">
+			<button type="button" class="btn btn-secondary">수정</button>
+			<button type="button" class="btn btn-danger">삭제</button>
+
+		</div>
+		<br>
+		<!--right-container-->
+	</div>
+</body>
+<script>
+	$("#modal_open_btn").click(function() {
+		$("#modal1").attr("style", "display:block");
+	});
+
+	$("#modal_close_btn").click(function() {
+		$("#modal1").attr("style", "display:none");
+	});
+	function modal(x, y) {
+		$("#modal" + x).attr("style", "display:none");
+		$("#modal" + y).attr("style", "display:block");
+	}
+</script>
+
+</html>

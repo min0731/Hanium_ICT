@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hanium.mapper.ActionMapper">
+	<select id="getList" resultType="com.hanium.domain.ActionVO">
+		select * from Action;
+	</select>
+	<select id="read" resultType="com.hanium.domain.ActionVO">
+		select * from Action where AC_no =
+		#{AC_no}
+	</select>
+	<insert id="insert">
+		insert into Action
+		(AC_no,AC_plan1,AC_plan2,AC_plan3,AC_expectedDate1,AC_expectedDate2,AC_expectedDate3,estimated_cost,AC_dept,AC_manager,AC_type)
+		values (#{AC_no},#{AC_plan1},#{AC_plan2},#{AC_plan3}, #{AC_expectedDate1}, #{AC_expectedDate2}, #{AC_expectedDate3},#{estimated_cost}, #{AC_dept}, #{AC_manager}, #{AC_type})
+	</insert>
+	<update id="update"><!-- update는 사용안해서 수정 안해놓음 -->
+		update Action
+		set AC_plan=#{AC_plan},
+		AC_expectedDate=#{AC_expectedDate}
+		AC_dept=#{AC_dept}
+		AC_manager=#{AC_manager}
+		AC_type=#{AC_type}
+		where AC_no=#{AC_no}
+	</update>
+</mapper>
